@@ -10,20 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CalendarTest {
 
-
-    @Test
-    public void getLoadedMonthsArray() {
-        Calendar calendar = new Calendar();
-        CalendarIO calendarIO = new CalendarIO();
-        try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/months.xml", calendar);
-            assertNotNull(calendar.getLoadedMonthsArray());
-        } catch (Exception e) {
-            assertEquals(e.getMessage(), "ErrorTaskLoading");
-            fail("ErrorTaskSaving");
-        }
-    }
-
     @Test
     public void getLoadedMonthArraySize() {
         Calendar calendar = new Calendar();
@@ -41,8 +27,8 @@ public class CalendarTest {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/months.xml", calendar);
-            assertNotNull(calendar.getLoadedMonth(12, 2018));
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/monthsNull.xml", calendar);
+            assertNull(calendar.getLoadedMonth(12, 2018));
         } catch (Exception e) {
             assertEquals(e.getMessage(), "ErrorTaskLoading");
             fail("ErrorTaskLoading");

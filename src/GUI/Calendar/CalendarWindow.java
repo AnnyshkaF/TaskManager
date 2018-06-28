@@ -102,7 +102,6 @@ public class CalendarWindow {
             }
         });
 
-        /* НАЖАТА ДАТА */
         table.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -127,7 +126,6 @@ public class CalendarWindow {
                             new Model.Calendar.Date(getDate(table.getValueAt(table.getSelectedRow(), table.getSelectedColumn()).toString()),
                                     currentMonth.getMonth(), currentMonth.getYear()), calendarWindowListener);
                 }
-
             }
         });
 

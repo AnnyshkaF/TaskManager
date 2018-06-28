@@ -45,10 +45,7 @@ public class Date {
             return false;
         }
         Date o = (Date) obj;
-        if (this.getDay() != o.getDay() && this.getMonth() != o.getMonth() && this.getYear() != o.getYear()) {
-            return false;
-        }
-        return true;
+        return this.getDay() == o.getDay() || this.getMonth() == o.getMonth() || this.getYear() == o.getYear();
     }
 
     @Override

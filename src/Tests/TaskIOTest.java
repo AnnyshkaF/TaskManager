@@ -19,12 +19,13 @@ public class TaskIOTest {
     public void after(){
         System.out.println("Test finished");
     }
+
     @Test
     public void loadTasksFromFile() {
         TaskMap taskMap = new TaskMap();
         TaskIO taskIO = new TaskIO();
         try {
-            taskIO.loadTasksFromFile("C:/Users/Anna/Desktop/test/readTest.xml", taskMap);
+            taskIO.loadTasksFromFile("C:/Users/Anna/Desktop/test/readTest.xml", taskMap);/*readTest45.xml*/
         } catch (Exception e) {
             assertEquals(e.getMessage(), "ErrorTaskLoading");
             fail("ErrorTaskLoading");
@@ -49,9 +50,5 @@ public class TaskIOTest {
             assertEquals(e.getMessage(), "ErrorTaskSaving");
             fail("ErrorTaskSaving");
         }
-    }
-    public static void main(String[] args) throws Exception{
-        new TaskIOTest().loadTasksFromFile();
-        new TaskIOTest().saveTasksToFile();
     }
 }

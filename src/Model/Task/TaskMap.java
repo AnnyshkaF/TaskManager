@@ -33,9 +33,12 @@ public class TaskMap {
 
     public void deleteTask(Date date, int index) {
         taskMap.get(date).remove(index);
+        if(taskMap.get(date).size() == 0){
+            taskMap.remove(date);
+        }
     }
 
-    public Integer calculateTotalTasksPerDay(Date date, boolean condition) {  //current month.date
+    public int calculateTotalTasksPerDay(Date date, boolean condition) {  //current month.date
         int total = 0;
         if(taskMap.containsKey(date)){
             for (Task temp : taskMap.get(date)) {
@@ -81,7 +84,7 @@ public class TaskMap {
         return res;
     }
 
-    public Integer calculateTotalTasksPerMonth(Date date, boolean condition) {  //current month.date
+    public int calculateTotalTasksPerMonth(Date date, boolean condition) {  //current month.date
         int total = 0;
         for (Map.Entry<Date, ArrayList<Task>> entry : taskMap.entrySet()) {
             if (entry.getKey().getMonth() == date.getMonth() && entry.getKey().getYear() == date.getYear()) {
