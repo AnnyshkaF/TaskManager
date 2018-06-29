@@ -51,7 +51,8 @@ public class CalendarWindow {
         this.taskMap = taskMap;
         CalendarWindowListener calendarWindowListener = new CalendarWindowListener(this, calendar);
         JScrollPane scrollPane = new JScrollPane(table);
-        frame.setSize(715, 650);
+
+        frame.setSize(715, 700);
         frame.setMinimumSize(new Dimension(780, 550));
 
         table.setCellSelectionEnabled(true);
@@ -66,11 +67,11 @@ public class CalendarWindow {
         bar.add(menu);
 
         JLabel monthLabel;
-        JButton previousMonth = new JButton("previous");
-        JButton nextMonth = new JButton("next");
-        JButton monthButton = new JButton("monthStat");
-        JButton updateButton = new JButton("update");
+        JButton previousMonth = new JButton( new ImageIcon("icons/s/bP.png"));
+        JButton nextMonth = new JButton(new ImageIcon("icons/s/bN.png"));
+        JButton monthButton = new JButton(new ImageIcon("icons/s/MS.png"));
         monthLabel = new JLabel(monthNames[java.time.MonthDay.now().getMonth().getValue() - 1] + "/" + currentMonth.getYear());
+
 
         frame.setLayout(null);
         frame.add(scrollPane);
@@ -78,7 +79,6 @@ public class CalendarWindow {
         frame.add(nextMonth);
         frame.add(monthLabel);
         frame.add(monthButton);
-        frame.add(updateButton);
         frame.setJMenuBar(bar);
 
         updateTable(calendar.getLoadedMonth(java.time.MonthDay.now().getMonth().getValue(), java.time.Year.now().getValue()));
@@ -88,17 +88,16 @@ public class CalendarWindow {
         frame.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
-                scrollPane.setBounds(0, 30, 100, 500);
+                scrollPane.setBounds(0, 30, 100, 300);
                 scrollPane.setSize(frame.getWidth(), frame.getHeight());
-                table.setRowHeight(frame.getHeight() / 8);
+                table.setRowHeight(frame.getHeight() / 8 + 5);
                 for (int i = 0; i < 8; i++) {
                     table.getColumnModel().getColumn(i).setPreferredWidth(frame.getWidth() / 8);
                 }
-                previousMonth.setBounds(0, 0, 100, 25);
-                nextMonth.setBounds(100, 0, 100, 25);
-                monthLabel.setBounds(210, 0, 100, 25);
-                monthButton.setBounds(310, 0, 100, 25);
-                updateButton.setBounds(410, 0, 100, 25);
+                previousMonth.setBounds(10, 0, 100, 30);
+                nextMonth.setBounds(120, 0, 100, 30);
+                monthButton.setBounds(230, 0, 100, 30);
+                monthLabel.setBounds(340, 0, 100, 30);
             }
         });
 
@@ -181,13 +180,6 @@ public class CalendarWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ShowGraphics showGraphics = new ShowGraphics(calendar, taskMap, currentMonth, ChooseTime.MONTH);
-            }
-        });
-
-        updateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                updateTable(calendar.getLoadedMonth(currentMonth.getMonth(), currentMonth.getYear()));
             }
         });
 

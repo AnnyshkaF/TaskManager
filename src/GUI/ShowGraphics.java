@@ -461,6 +461,8 @@ class ViewGraphics extends Component {
 }
 
 public class ShowGraphics {
+    private String[] monthNames = {"January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"};
     public ShowGraphics(Calendar calendar, TaskMap taskMap, CurrentMonth currentMonth, ChooseTime time) {
         Date date = currentMonth.getCurrentMonth();
         JDialog dialog = new JDialog();
@@ -470,10 +472,23 @@ public class ShowGraphics {
         dialog.add(scrollPane);
 
         switch(time) {
-            case  WEEKS: dialog.setMinimumSize(new Dimension(830, 560)); break;
-            case  MONTH: dialog.setSize(780, 520); dialog.setResizable(false); break;
-            case  WEEK: dialog.setSize(750, 520); dialog.setResizable(false); break;
-            case  YEAR: dialog.setSize(800, 530);
+            case  WEEKS:
+                dialog.setMinimumSize(new Dimension(830, 560));
+                dialog.setTitle( "Statistics: All years");
+                break;
+            case  MONTH:
+                dialog.setTitle( "Statistics: " + monthNames[currentMonth.getMonth() - 1] + "/" + currentMonth.getYear());
+                dialog.setSize(780, 520);
+                dialog.setResizable(false);
+                break;
+            case  WEEK:
+                dialog.setSize(750, 520);
+                dialog.setTitle( "Statistics: " + "week");
+                dialog.setResizable(false);
+                break;
+            case  YEAR:
+                dialog.setSize(800, 530);
+                dialog.setTitle( "Statistics: " + currentMonth.getYear());
         }
         dialog.setVisible(true);
 

@@ -18,107 +18,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Calendar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Calendar/Calendar.java">
+      <file leaf-file-name="CalendarWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Calendar/CalendarWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-              <folding>
-                <element signature="e#262#263#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
-                <element signature="e#393#394#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CurrentMonth.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Calendar/CurrentMonth.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#496#497#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
-                <element signature="e#570#571#0" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Date.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Calendar/Date.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadedMonth.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Calendar/LoadedMonth.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DateComparator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/Task/DateComparator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Task/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Task/TaskMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="197">
+              <caret line="92" column="56" selection-start-line="92" selection-start-column="56" selection-end-line="92" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3325#4030#0" expanded="true" />
+                <element signature="e#4029#4030#0" expanded="true" />
+                <element signature="e#4065#5928#0" expanded="true" />
+                <element signature="e#5927#5928#0" expanded="true" />
+                <element signature="e#7388#8063#0" expanded="true" />
+                <element signature="e#8062#8063#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeekStat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Task/WeekStat.java">
+      <file leaf-file-name="ShowGraphics.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/ShowGraphics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tests/CalendarTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+            <state relative-caret-position="714">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#ViewGraphics#0;class#ViewGraphics#0" />
+                <element signature="method#drawWeekAxis#0;class#ViewGraphics#0" />
+                <element signature="method#drawMonthAxis#0;class#ViewGraphics#0" />
+                <element signature="method#drawYearAxis#0;class#ViewGraphics#0" />
+                <element signature="method#drawAllWeeksAxis#0;class#ViewGraphics#0" />
+                <element signature="method#drawVerticalWeekText#0;class#ViewGraphics#0" />
+                <element signature="method#drawVerticalWeekText#1;class#ViewGraphics#0" />
+                <element signature="method#calcWeekValues#0;class#ViewGraphics#0" />
+                <element signature="method#calcMonthValues#0;class#ViewGraphics#0" />
+                <element signature="method#calcAllWeeksValues#0;class#ViewGraphics#0" />
+                <element signature="method#calcYearWeeksValues#0;class#ViewGraphics#0" />
+                <element signature="method#recalculateWeekAndDraw#0;class#ViewGraphics#0" />
+                <element signature="method#recalculateMonthAndDraw#0;class#ViewGraphics#0" />
+                <element signature="method#recalculateAllWeeksAndDraw#0;class#ViewGraphics#0" />
+                <element signature="method#recalculateYearAndDraw#0;class#ViewGraphics#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,9 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.month</find>
-      <find>.day</find>
-      <find>.year</find>
       <find>jList</find>
       <find>frame.</find>
       <find>list</find>
@@ -165,6 +102,9 @@
       <find>dialog</find>
       <find>week</find>
       <find>compa</find>
+      <find>pink</find>
+      <find>month</find>
+      <find>prefer</find>
     </findStrings>
     <replaceStrings>
       <replace>JLable</replace>
@@ -236,8 +176,6 @@
         <option value="$PROJECT_DIR$/src/f.form" />
         <option value="$PROJECT_DIR$/src/GUI/Calendar/YearChoosing.java" />
         <option value="$PROJECT_DIR$/src/Model/Calendar/Calendar.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ShowGraphics.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Calendar/CalendarWindow.java" />
         <option value="$PROJECT_DIR$/src/Model/Task/TaskMapTest.java" />
         <option value="$PROJECT_DIR$/src/Tests/TestsMain.java" />
         <option value="$PROJECT_DIR$/src/Model/Task/WeekStat.java" />
@@ -249,12 +187,14 @@
         <option value="$PROJECT_DIR$/src/Tests/TaskIOTest.java" />
         <option value="$PROJECT_DIR$/src/Tests/CalendarTest.java" />
         <option value="$PROJECT_DIR$/src/Model/Calendar/CurrentMonth.java" />
+        <option value="$PROJECT_DIR$/src/GUI/ShowGraphics.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Calendar/CalendarWindow.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="296" />
-    <option name="y" value="51" />
+    <option name="x" value="170" />
+    <option name="y" value="32" />
     <option name="width" value="1410" />
     <option name="height" value="915" />
   </component>
@@ -263,9 +203,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,12 +221,34 @@
               <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="TaskEditWindow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="ShowGraphics.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -544,25 +505,25 @@
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.41015625" side_tool="true" weight="0.2924138" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.58984375" visible="true" weight="0.2924138" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.58984375" visible="true" weight="0.048275862" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.26757812" />
-      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49739584" weight="0.32965517" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.26757812" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.484375" weight="0.23586208" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.484375" weight="0.25931033" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.71940106" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49739584" weight="0.32965517" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -578,7 +539,7 @@
           <option name="timeStamp" value="133" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="188" />
+      <option name="time" value="191" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -606,11 +567,17 @@
         <watch expression="(495 * amountOfYears - 10) / 12" language="JAVA" />
         <watch expression="calendar.getLoadedMonthArraySize()" language="JAVA" />
         <watch expression="calendar.getLoadedMonthsArray().get(month).getAmountOfWeeks()" language="JAVA" />
+        <watch expression="table.getRowCount()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>table.getRowCount()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>calendar.getLoadedMonthsArray().get(month).getAmountOfWeeks()</expression-string>
         <language-id>JAVA</language-id>
@@ -656,11 +623,6 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>la.getHorizontalTextPosition()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -668,9 +630,7 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/StatisticWindow/Statistic.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/StatisticWindow/e.form" />
     <entry file="file://$PROJECT_DIR$/src/GUI/StatisticWindow/e.java" />
-    <entry file="file://$PROJECT_DIR$/src/plus.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plus.gif" />
     <entry file="file://$PROJECT_DIR$/Appp.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -827,58 +787,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TaskEditWindow/ListTaskWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="153" column="36" lean-forward="true" selection-start-line="153" selection-start-column="36" selection-end-line="153" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/f.form" />
     <entry file="file://$PROJECT_DIR$/src/f.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Calendar/YearChoosing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ShowGraphics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#ViewGraphics#0;class#ViewGraphics#0" />
-            <element signature="method#paint#0;class#ViewGraphics#0" />
-            <element signature="method#drawWeekAxis#0;class#ViewGraphics#0" />
-            <element signature="method#drawMonthAxis#0;class#ViewGraphics#0" />
-            <element signature="method#drawYearAxis#0;class#ViewGraphics#0" />
-            <element signature="method#drawAllWeeksAxis#0;class#ViewGraphics#0" />
-            <element signature="method#drawVerticalWeekText#0;class#ViewGraphics#0" />
-            <element signature="method#drawVerticalWeekText#1;class#ViewGraphics#0" />
-            <element signature="method#calcWeekValues#0;class#ViewGraphics#0" />
-            <element signature="method#calcMonthValues#0;class#ViewGraphics#0" />
-            <element signature="method#calcAllWeeksValues#0;class#ViewGraphics#0" />
-            <element signature="method#calcYearWeeksValues#0;class#ViewGraphics#0" />
-            <element signature="method#recalculateWeekAndDraw#0;class#ViewGraphics#0" />
-            <element signature="method#recalculateMonthAndDraw#0;class#ViewGraphics#0" />
-            <element signature="method#recalculateAllWeeksAndDraw#0;class#ViewGraphics#0" />
-            <element signature="method#recalculateYearAndDraw#0;class#ViewGraphics#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Calendar/CalendarWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1696">
-          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -927,9 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="30" column="78" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -937,16 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/CalendarTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -972,20 +873,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Calendar/CurrentMonth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="64">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Calendar/Date.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
+        <state relative-caret-position="319">
           <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
         </state>
       </provider>
@@ -993,24 +888,14 @@
     <entry file="file://$PROJECT_DIR$/src/Model/Calendar/LoadedMonth.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Task/WeekStat.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Task/DateComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Task/TaskMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -1021,10 +906,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Task/DateComparator.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Task/TaskMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="537">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Task/WeekStat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/CalendarTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TaskEditWindow/ListTaskWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1757">
+          <caret line="153" column="36" selection-start-line="153" selection-start-column="36" selection-end-line="153" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Calendar/CalendarWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="92" column="56" selection-start-line="92" selection-start-column="56" selection-end-line="92" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3325#4030#0" expanded="true" />
+            <element signature="e#4029#4030#0" expanded="true" />
+            <element signature="e#4065#5928#0" expanded="true" />
+            <element signature="e#5927#5928#0" expanded="true" />
+            <element signature="e#7388#8063#0" expanded="true" />
+            <element signature="e#8062#8063#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ShowGraphics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ViewGraphics#0;class#ViewGraphics#0" />
+            <element signature="method#drawWeekAxis#0;class#ViewGraphics#0" />
+            <element signature="method#drawMonthAxis#0;class#ViewGraphics#0" />
+            <element signature="method#drawYearAxis#0;class#ViewGraphics#0" />
+            <element signature="method#drawAllWeeksAxis#0;class#ViewGraphics#0" />
+            <element signature="method#drawVerticalWeekText#0;class#ViewGraphics#0" />
+            <element signature="method#drawVerticalWeekText#1;class#ViewGraphics#0" />
+            <element signature="method#calcWeekValues#0;class#ViewGraphics#0" />
+            <element signature="method#calcMonthValues#0;class#ViewGraphics#0" />
+            <element signature="method#calcAllWeeksValues#0;class#ViewGraphics#0" />
+            <element signature="method#calcYearWeeksValues#0;class#ViewGraphics#0" />
+            <element signature="method#recalculateWeekAndDraw#0;class#ViewGraphics#0" />
+            <element signature="method#recalculateMonthAndDraw#0;class#ViewGraphics#0" />
+            <element signature="method#recalculateAllWeeksAndDraw#0;class#ViewGraphics#0" />
+            <element signature="method#recalculateYearAndDraw#0;class#ViewGraphics#0" />
+          </folding>
         </state>
       </provider>
     </entry>
