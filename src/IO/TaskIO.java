@@ -46,7 +46,6 @@ public class TaskIO {
             }catch (Exception e){
                 throw new RuntimeException("ErrorTaskLoading");
             }
-        //System.out.println(taskMap.toString());
     }
 
     public void saveTasksToFile(String filename, TaskMap taskMap){

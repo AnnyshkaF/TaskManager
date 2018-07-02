@@ -13,16 +13,14 @@ import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 class ViewGraphics extends Component {
-    /*private String[] monthNames = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};*/
     private String[] monthNames = {"January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"};
-    Calendar calendar;
-    TaskMap taskMap;
-    Date date;
-    ChooseTime time;
-    ArrayList<Date> dateList;
-    int amountOfYears;
+    private Calendar calendar;
+    private TaskMap taskMap;
+    private Date date;
+    private ChooseTime time;
+    private ArrayList<Date> dateList;
+    private int amountOfYears;
     private int otstup = 0;
     public ViewGraphics(Calendar calendar, TaskMap taskMap, Date date, ChooseTime time){
         this.calendar = calendar;
@@ -240,8 +238,8 @@ class ViewGraphics extends Component {
     }
 
     void calcWeekValues(Graphics g, Date fDate) {    //week
-        int[] undone = taskMap.calculateTotalTasksPerWeek(calendar, fDate, true, fDate.getDay()).undone;
-        int[] done = taskMap.calculateTotalTasksPerWeek(calendar, fDate, true, fDate.getDay()).done;
+        int[] undone = taskMap.calculateTotalTasksPerWeek(calendar, fDate, true, fDate.getDay()).getUndone();
+        int[] done = taskMap.calculateTotalTasksPerWeek(calendar, fDate, true, fDate.getDay()).getDone();
 
         for (int i = 0; i < 6; i++) {
             g.setColor(Color.RED);
@@ -313,8 +311,8 @@ class ViewGraphics extends Component {
             }
             int i = 0, done = 0, undone = 0;
             while (counterOnceDay < calendar.getLoadedMonth(curMonth, curYear).getAmountOfDaysInMonth()){
-                undone = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), false, counterOnceDay).total;
-                done = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), true, counterOnceDay).total;
+                undone = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), false, counterOnceDay).getTotal();
+                done = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), true, counterOnceDay).getTotal();
                 list.add(new Pair<>(undone, done));
                 dateList.add(new Date(counterOnceDay, curMonth, curYear));
                 counterOnceDay+=7;
@@ -356,8 +354,8 @@ class ViewGraphics extends Component {
             }
             int i = 0, done = 0, undone = 0;
             while (counterOnceDay < calendar.getLoadedMonth(curMonth, curYear).getAmountOfDaysInMonth()) {
-                undone = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), false, counterOnceDay).total;
-                done = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), true, counterOnceDay).total;
+                undone = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), false, counterOnceDay).getTotal();
+                done = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), true, counterOnceDay).getTotal();
                 list.add(new Pair<>(undone, done));
                 dateList.add(new Date(counterOnceDay, curMonth, curYear));
                 counterOnceDay += 7;

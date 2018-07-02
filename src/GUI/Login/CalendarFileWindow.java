@@ -1,6 +1,5 @@
 package GUI.Login;
 
-import IO.UserBaseIO;
 import Model.UserBase;
 
 import javax.swing.*;

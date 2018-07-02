@@ -15,15 +15,15 @@ import java.util.ArrayList;
 public class AddTaskWindow {
     public AddTaskWindow(Date date, TaskMap taskMap, DefaultListModel<String> dlm, ArrayList<Task> currentTaskList, CalendarWindowListener calendarWindowListener) {
         JFrame frame = new JFrame();
-        JLabel nameLable = new JLabel("name");
-        JLabel descriptionLable = new JLabel("description");
-        JLabel durabilityLable = new JLabel("durability");
-        JLabel complexityLable = new JLabel("complexity");
+        JLabel nameLable = new JLabel("Name:");
+        JLabel descriptionLable = new JLabel("Description:");
+        JLabel durabilityLable = new JLabel("Durability:");
+        JLabel complexityLable = new JLabel("Complexity:");
         JTextField nameText = new JTextField("name");
         JTextField descriptionText = new JTextField("description");
         JTextField durabilityText = new JTextField("durability");
         JTextField complexityText = new JTextField("complexity");
-        JButton addButton = new JButton("Add");
+        JButton addButton = new JButton("OK");
         JButton cancelButton = new JButton("Cancel");
         Container c = frame.getContentPane();
 

@@ -136,10 +136,10 @@ public class ListTaskWindow{
             public void actionPerformed(ActionEvent e) {
                 int index = list.getSelectedIndex();
                 if(!showDone.isSelected()) {
-                    InfoTaskWindow itw = new InfoTaskWindow(date, currentList.get(index), index);
+                    InfoTaskWindow itw = new InfoTaskWindow(date, currentList.get(index));
                     return;
                 }
-                InfoTaskWindow itw = new InfoTaskWindow(date, taskMap.getTaskArray(date).get(index), index);
+                InfoTaskWindow itw = new InfoTaskWindow(date, taskMap.getTaskArray(date).get(index));
             }
         });
         itemEdit.addActionListener(new ActionListener() {

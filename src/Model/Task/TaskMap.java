@@ -57,10 +57,14 @@ public class TaskMap {
                     && currentDate.getMonth() == entry.getKey().getMonth() && currentDate.getYear() == entry.getKey().getYear()) {
                 for (Task temp : taskMap.get(entry.getKey())) {
                     if (temp.getCondition() == condition) {
-                        res.total = res.total + 1;
+                        res.setTotal(res.getTotal() + 1);
                     }
-                    if (temp.getCondition()) {res.done[entry.getKey().getDay() - startWeekDay]++;}
-                    if (!temp.getCondition()) {res.undone[entry.getKey().getDay() - startWeekDay]++;}
+                    if (temp.getCondition()) {
+                        res.setDone(entry.getKey().getDay() - startWeekDay, res.getDone(entry.getKey().getDay() - startWeekDay) + 1);
+                    }
+                    if (!temp.getCondition()) {
+                        res.setUndone(entry.getKey().getDay() - startWeekDay,res.getUndone(entry.getKey().getDay() - startWeekDay) + 1);
+                    }
                 }
             }
         }
@@ -73,10 +77,14 @@ public class TaskMap {
                         && newDate.getMonth() == entry.getKey().getMonth() && newDate.getYear() == entry.getKey().getYear()) {
                     for (Task temp : taskMap.get(entry.getKey())) {
                         if (temp.getCondition() == condition) {
-                            res.total = res.total + 1;
+                            res.setTotal(res.getTotal() + 1);
                         }
-                        if (temp.getCondition()) res.done[prevWeek + entry.getKey().getDay() - 1]++;
-                        if (!temp.getCondition()) res.undone[prevWeek + entry.getKey().getDay() - 1]++;
+                        if (temp.getCondition()) {
+                            res.setDone(prevWeek + entry.getKey().getDay() - 1 , res.getDone(prevWeek + entry.getKey().getDay() - 1) + 1);;
+                        }
+                        if (!temp.getCondition()) {
+                            res.setUndone(prevWeek + entry.getKey().getDay() - 1, res.getUndone(prevWeek + entry.getKey().getDay() - 1) + 1);
+                        }
                     }
                 }
             }

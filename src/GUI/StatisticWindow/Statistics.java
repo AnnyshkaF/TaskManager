@@ -67,8 +67,8 @@ public class Statistics  extends JDialog{
         JLabel addedLabel = new JLabel("Added:");
         JLabel doneLabel = new JLabel("Done:");
         JLabel leftLabel = new JLabel("Left:");
-        undone = taskMap.calculateTotalTasksPerWeek(calendar, date, false, startWeek).total;
-        done = taskMap.calculateTotalTasksPerWeek(calendar, date, true, startWeek).total;
+        undone = taskMap.calculateTotalTasksPerWeek(calendar, date, false, startWeek).getTotal();
+        done = taskMap.calculateTotalTasksPerWeek(calendar, date, true, startWeek).getTotal();
         JLabel addedValue = new JLabel(undone.toString());
         JLabel doneValue = new JLabel(done.toString());
         res = undone - done;

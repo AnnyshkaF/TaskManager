@@ -12,16 +12,16 @@ import java.awt.event.ActionListener;
 public class EditTaskWindow{
     public EditTaskWindow(Date date, TaskMap taskMap, Task taskToEdit, int index){
         JFrame frame = new JFrame();
-        JLabel nameLabel = new JLabel("name");
-        JLabel descriptionLabel = new JLabel("description");
-        JLabel durabilityLabel = new JLabel("durability");
-        JLabel complexityLabel = new JLabel("complexity");
+        JLabel nameLabel = new JLabel("Name:");
+        JLabel descriptionLabel = new JLabel("Description:");
+        JLabel durabilityLabel = new JLabel("Durability:");
+        JLabel complexityLabel = new JLabel("Complexity:");
         JTextField nameText = new JTextField(taskToEdit.getName());
         JTextField descriptionText = new JTextField(taskToEdit.getDescription());
         JTextField  durabilityText= new JTextField(taskToEdit.getDurability());
         JTextField  complexityText= new JTextField(taskToEdit.getComplexity());
         JButton cancelButton = new JButton("Cancel");
-        JButton saveButton = new JButton("Save");
+        JButton saveButton = new JButton("OK");
         Container c = frame.getContentPane();
 
         frame.setSize(300,300);
@@ -34,8 +34,8 @@ public class EditTaskWindow{
         c.add(durabilityText);
         c.add(complexityLabel);
         c.add(complexityText);
-        c.add(cancelButton);
         c.add(saveButton);
+        c.add(cancelButton);
         frame.setVisible(true);
 
         cancelButton.addActionListener(new ActionListener() {

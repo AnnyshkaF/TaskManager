@@ -64,7 +64,7 @@ public class TaskMapTest {
                     new Task(s, s, s, s, true));
         }
         assertEquals(7,
-                taskMap.calculateTotalTasksPerWeek(cal, new Date(1, 1, 2018),true, 1/*8*/).total);
+                taskMap.calculateTotalTasksPerWeek(cal, new Date(1, 1, 2018),true, 1/*8*/).getTotal());
     }
 
     @Test

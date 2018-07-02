@@ -8,9 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddUserWindow extends JDialog{
-    private String name;
-    private boolean flag = false;
-
     public AddUserWindow(UserBase userBase, LoginWindowListener loginWindowListener){
         setSize(300, 140);
         JLabel labelName = new JLabel("Name:");

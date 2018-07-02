@@ -16,12 +16,9 @@ public class CalendarIO {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
-
             doc.getDocumentElement().normalize();
 
-            //System.out.println("Root element : " + doc.getDocumentElement().getNodeName());
             NodeList nList = doc.getElementsByTagName("month");
-            //System.out.println("----------------------------");
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
                 org.w3c.dom.Node nNode = nList.item(temp);
@@ -35,7 +32,6 @@ public class CalendarIO {
                         Integer.parseInt(data[4])));    //WeeksInMonth  (from zero) 4-5
 
                 //shows dates base
-                //System.out.println(loadedMonthsArray.get(temp));
                 if (Integer.parseInt(data[0]) < 0 || Integer.parseInt(data[0]) > 13) {
                     throw new RuntimeException("Wrong Month in DateBase");
                 }

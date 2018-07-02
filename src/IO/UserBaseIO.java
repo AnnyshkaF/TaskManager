@@ -47,19 +47,6 @@ public class UserBaseIO {
         folder.delete();
     }
 
-    public void createCalendarFile(String name, String filename){
-        File folder = new File(saveFolder + name);
-        if(!folder.exists()){
-            throw new RuntimeException("User " + name + "doesn't exist");
-        }
-        folder = new File(saveFolder + name + "/" + filename + ".xml");
-        try {
-            folder.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void deleteCalendarFile(String name, String filename){
         File folder = new File(saveFolder + name + "/" + filename);
         folder.delete();
