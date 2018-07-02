@@ -15,7 +15,7 @@ public class CalendarTest {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/months.xml", calendar);
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/LoginWindow/months.xml", calendar);
         } catch (Exception e) {
             fail("ErrorTaskLoading");
         }
@@ -27,7 +27,7 @@ public class CalendarTest {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/monthsNull.xml", calendar);
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/LoginWindow/monthsNull.xml", calendar);
             assertNull(calendar.getLoadedMonth(12, 2018));
         } catch (Exception e) {
             assertEquals(e.getMessage(), "ErrorTaskLoading");
@@ -39,7 +39,7 @@ public class CalendarTest {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/months.xml", calendar);
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/LoginWindow/months.xml", calendar);
         } catch (Exception e) {
             fail("ErrorTaskLoading");
         }

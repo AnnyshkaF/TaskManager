@@ -28,7 +28,7 @@ public class CalendarIOTest {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/months.xml", calendar);
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/LoginWindow/months.xml", calendar);
         } catch (Exception e) {
             assertEquals(e.getMessage(), "ErrorCalendarLoading");
             fail("ErrorCalendarLoading");

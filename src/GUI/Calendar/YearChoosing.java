@@ -1,7 +1,7 @@
 package GUI.Calendar;
 
 import GUI.ChooseTime;
-import GUI.ShowGraphics;
+import GUI.Graphics.ShowGraphics;
 import Model.Calendar.Calendar;
 import Model.Calendar.CurrentMonth;
 import Model.Calendar.Date;
@@ -12,7 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class YearChoosing {
-    private String comboBoxYear = "2017";
+    private String comboBoxYear;
+
     public YearChoosing(Calendar calendar, CurrentMonth currentMonth, TaskMap taskMap){
         JDialog dialog = new JDialog();
         dialog.setLayout(null);
@@ -38,22 +39,7 @@ public class YearChoosing {
         dialog.add(okButton);
         dialog.add(closeButton);
 
-
         dialog.setVisible(true);
-
-        ActionListener actionListener = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JComboBox box = (JComboBox)e.getSource();
-                String item = (String)box.getSelectedItem();
-                if(item == null){
-                    item = String.valueOf(years[0]);
-                }
-                int year = Integer.parseInt(item);
-                CurrentMonth newCurrentMonth = new CurrentMonth(new Date(1, 1, year));
-                ShowGraphics showGraphics = new ShowGraphics(calendar, taskMap, newCurrentMonth, ChooseTime.YEAR);
-                dialog.dispose();
-            }
-        };
 
         comboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
@@ -63,6 +49,9 @@ public class YearChoosing {
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(comboBoxYear == null){
+                    comboBoxYear = String.valueOf(years[0]);
+                }
                 int year = Integer.parseInt(comboBoxYear);
                 CurrentMonth newCurrentMonth = new CurrentMonth(new Date(1, 1, year));
                 ShowGraphics showGraphics = new ShowGraphics(calendar, taskMap, newCurrentMonth, ChooseTime.YEAR);

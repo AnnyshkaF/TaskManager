@@ -45,6 +45,10 @@ public class AddTaskWindow {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(nameText.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "Name task!");
+                    return;
+                }
                 Task tmpTask = new Task(nameText.getText(), descriptionText.getText(), durabilityText.getText(), complexityText.getText(), false);
                 taskMap.addTask(date, tmpTask);
                 currentTaskList.add(tmpTask);

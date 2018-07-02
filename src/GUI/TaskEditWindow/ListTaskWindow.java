@@ -55,7 +55,7 @@ public class ListTaskWindow{
         dialog.add(showDone);
         dialog.add(scrollPane);
 
-        JMenuItem itemAdd = new JMenuItem("Add", new ImageIcon("icons/add.gif"));
+        JMenuItem itemAdd = new JMenuItem("Add", new ImageIcon("icons/plus.gif"));
         JMenuItem itemDelete = new JMenuItem("Delete", new ImageIcon("icons/delete.gif"));
         JMenuItem itemEdit = new JMenuItem("Edit", new ImageIcon("icons/edit.gif"));
         JMenuItem itemDone = new JMenuItem("Done", new ImageIcon("icons/tick.gif"));
@@ -81,7 +81,7 @@ public class ListTaskWindow{
         itemStatistics.setHorizontalTextPosition(JMenuItem.RIGHT);
         itemStatistics.addActionListener(menuListener);
 
-        list.setFont(new Font("Lucida Fax",Font.BOLD,16));
+        list.setFont(new Font(Font.SANS_SERIF, Font.BOLD,16));
         list.setComponentPopupMenu(jPopupMenu);
         dialog.setVisible(true);
 

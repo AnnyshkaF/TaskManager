@@ -1,5 +1,5 @@
 package GUI.Calendar;
-import GUI.ShowGraphics;
+import GUI.Graphics.ShowGraphics;
 import GUI.TaskEditWindow.ListTaskWindow;
 import GUI.ChooseTime;
 import IO.CalendarIO;
@@ -44,7 +44,7 @@ public class CalendarWindow {
     private JFrame frame = new JFrame();
     public CurrentMonth currentMonth = new CurrentMonth();
 
-    public CalendarWindow(TaskMap taskMap, String calendarFile, String saveFile) throws Exception {
+    public CalendarWindow(TaskMap taskMap, String calendarFile, String saveFile) {
         this.calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         calendarIO.loadCalendarFromFile(calendarFile, calendar);
@@ -67,9 +67,9 @@ public class CalendarWindow {
         bar.add(menu);
 
         JLabel monthLabel;
-        JButton previousMonth = new JButton( new ImageIcon("icons/s/bP.png"));
-        JButton nextMonth = new JButton(new ImageIcon("icons/s/bN.png"));
-        JButton monthButton = new JButton(new ImageIcon("icons/s/MS.png"));
+        JButton previousMonth = new JButton( new ImageIcon("icons/bP.png"));
+        JButton nextMonth = new JButton(new ImageIcon("icons/bN.png"));
+        JButton monthButton = new JButton(new ImageIcon("icons/monthStat.png"));
         monthLabel = new JLabel(monthNames[java.time.MonthDay.now().getMonth().getValue() - 1] + "/" + currentMonth.getYear());
 
 
@@ -85,6 +85,7 @@ public class CalendarWindow {
         frame.setVisible(true);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+
         frame.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -168,10 +169,10 @@ public class CalendarWindow {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    System.exit(0);
+                    frame.dispose();
                 }
                 if (answer == JOptionPane.NO_OPTION) {
-                    System.exit(0);
+                    frame.dispose();
                 }
             }
         });

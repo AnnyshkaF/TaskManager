@@ -25,7 +25,7 @@ public class TaskIOTest {
         TaskMap taskMap = new TaskMap();
         TaskIO taskIO = new TaskIO();
         try {
-            taskIO.loadTasksFromFile("C:/Users/Anna/Desktop/test/readTest.xml", taskMap);/*readTest45.xml*/
+            taskIO.loadTasksFromFile("C:/Users/Anna/Desktop/LoginWindow/readTest.xml", taskMap);/*readTest45.xml*/
         } catch (Exception e) {
             assertEquals(e.getMessage(), "ErrorTaskLoading");
             fail("ErrorTaskLoading");
@@ -44,7 +44,7 @@ public class TaskIOTest {
         }
         try {
             synchronized (taskIO) {
-                taskIO.saveTasksToFile("C:/Users/Anna/Desktop/test/test.xml", taskMap1);
+                taskIO.saveTasksToFile("C:/Users/Anna/Desktop/LoginWindow/LoginWindow.xml", taskMap1);
             }
         } catch (Exception e) {
             assertEquals(e.getMessage(), "ErrorTaskSaving");

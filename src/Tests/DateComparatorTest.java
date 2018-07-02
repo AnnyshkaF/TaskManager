@@ -16,6 +16,6 @@ class DateComparatorTest {
     @Test
     void compareNegative() {
         DateComparator d = new DateComparator();
-        assertEquals(0, d.compare(new Date(3, 1, 2018), new Date(5, 1, 2018)));
+        assertEquals(0, d.compare(new Date(3, 1, 2018), new Date(1, 1, 2019)));
     }
 }
