@@ -1,11 +1,11 @@
-package GUI.Calendar;
+package gui.calendar;
 
-import GUI.ChooseTime;
-import GUI.Graphics.ShowGraphics;
-import Model.Calendar.Calendar;
-import Model.Calendar.CurrentMonth;
-import Model.Calendar.Date;
-import Model.Task.TaskMap;
+import gui.ChooseTime;
+import gui.graphics.ShowGraphics;
+import model.calendar.Calendar;
+import model.calendar.CurrentMonth;
+import model.calendar.Date;
+import model.task.TaskMap;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

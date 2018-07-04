@@ -1,6 +1,6 @@
-package Model.Task;
+package model.task;
 
-import Model.Calendar.Date;
+import model.calendar.Date;
 
 import java.util.Comparator;
 

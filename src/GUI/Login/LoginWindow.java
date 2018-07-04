@@ -1,10 +1,10 @@
-package GUI.Login;
+package gui.login;
 
-import GUI.Calendar.CalendarWindow;
-import IO.TaskIO;
-import IO.UserBaseIO;
-import Model.Task.TaskMap;
-import Model.UserBase;
+import gui.calendar.CalendarWindow;
+import io.TaskIO;
+import io.UserBaseIO;
+import model.task.TaskMap;
+import model.userbase.UserBase;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -25,7 +25,7 @@ public class LoginWindow {
 
     public LoginWindow(UserBase userBase) {
         JFrame frame = new JFrame();
-        frame.setTitle("Login");
+        frame.setTitle("login");
         frame.setResizable(false);
         frame.setSize(570, 180);
 
@@ -91,7 +91,7 @@ public class LoginWindow {
                     return;
                 }
                 userBase.deleteUser(name);
-                new UserBaseIO().deleteNameFolder(name);
+                new UserBaseIO().deleteUserFolder(name);
                 update(userBase);
             }
         });
@@ -130,26 +130,23 @@ public class LoginWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 name = String.valueOf(comboBoxUsersNames.getSelectedItem());
-                System.out.println(name);
-                if (userBase.getUsersFiles(name) == null) {
+                if (userBase.getUsersCalendars(name) == null) {
                     comboBoxUsersFiles.removeAllItems();
                     return;
                 }
-                if (userBase.getUsersFiles(name) != null) {
+                if (userBase.getUsersCalendars(name) != null) {
                     comboBoxUsersFiles.removeAllItems();
-                    String[] files = userBase.getUsersFiles(name);
+                    String[] files = userBase.getUsersCalendars(name);
                     for (String file : files) {
                         comboBoxUsersFiles.addItem(file);
                     }
                 }
             }
         });
-
         comboBoxUsersFiles.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 filename = String.valueOf(comboBoxUsersFiles.getSelectedItem());
-                System.out.println(name + " - " + filename);
                 if (filename.equals("Add new calendar")) {
                     CalendarFileWindow newUserWindow = new CalendarFileWindow(userBase, name, loginWindowListener);
                 }
@@ -160,7 +157,7 @@ public class LoginWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(filename == null || filename.equals("null")){
-                    JOptionPane.showMessageDialog(null, "Calendar is not chosen!");
+                    JOptionPane.showMessageDialog(null, "calendar is not chosen!");
                     return;
                 }
                 String fileCalendar = "saves/months.xml";
@@ -168,7 +165,11 @@ public class LoginWindow {
 
                 TaskMap taskMap = new TaskMap();
                 if(new File(fileTask).exists()) {
-                    new TaskIO().loadTasksFromFile(fileTask, taskMap);
+                    try {
+                        new TaskIO().loadTasksFromFile(fileTask, taskMap);
+                    } catch (Exception e1) {
+                        e1.printStackTrace();
+                    }
                 }
                 CalendarWindow calendarWindow = new CalendarWindow(taskMap, fileCalendar, fileTask);
                 //frame.dispose();
@@ -182,6 +183,7 @@ public class LoginWindow {
     public String getFilename() {
         return filename;
     }
+
     //names
     void update(UserBase userBase) {
         comboBoxUsersNames.removeAllItems();
@@ -195,8 +197,8 @@ public class LoginWindow {
     //files
     void update(UserBase userBase, String name){
         comboBoxUsersFiles.removeAllItems();
-        if (userBase.getUsersFiles(name) != null) {
-            String[] files = userBase.getUsersFiles(name);
+        if (userBase.getUsersCalendars(name) != null) {
+            String[] files = userBase.getUsersCalendars(name);
             for (String i : files) {
                 comboBoxUsersFiles.addItem(i);
             }

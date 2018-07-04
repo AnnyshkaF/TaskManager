@@ -1,6 +1,6 @@
-package GUI.Login;
+package gui.login;
 
-import Model.UserBase;
+import model.userbase.UserBase;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +12,7 @@ public class CalendarFileWindow {
     public CalendarFileWindow(UserBase userBase, String name, LoginWindowListener loginWindowListener){
         JDialog dialog = new JDialog();
         dialog.setSize(300, 140);
-        JLabel labelName = new JLabel("Calendar:");
+        JLabel labelName = new JLabel("calendar:");
         JTextField textFieldName = new JTextField();
         JButton buttonOk = new JButton("Create");
         JButton buttonCancel = new JButton("Cancel");

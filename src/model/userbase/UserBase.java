@@ -1,6 +1,6 @@
-package Model;
+package model.userbase;
 
-import IO.UserBaseIO;
+import io.UserBaseIO;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -8,6 +8,10 @@ import java.util.TreeMap;
 
 public class UserBase {
     private TreeMap<String, ArrayList<String>> userBase = new TreeMap<>();
+
+    public TreeMap<String, ArrayList<String>> getUserBase() {
+        return userBase;
+    }
 
     public boolean addUser(String name) {
         if (userBase.containsKey(name)) {
@@ -55,7 +59,7 @@ public class UserBase {
         return null;
     }
 
-    public String[] getUsersFiles(String name) {
+    public String[] getUsersCalendars(String name) {
         if (userBase.containsKey(name)) {
             if (userBase.get(name).size() > 0) {
                 String[] files = new String[userBase.get(name).size()];
@@ -68,18 +72,14 @@ public class UserBase {
         return null;
     }
 
-    public TreeMap<String, ArrayList<String>> getUserBase() {
-        return userBase;
-    }
-
-    public void editNameFolder(String oldName, String newName) {
+    public void editUserName(String oldName, String newName) {
         ArrayList<String> tmpArray = userBase.remove(oldName);
         addUser(newName);
         userBase.put(newName, tmpArray);
-        new UserBaseIO().editNameFolder(oldName, newName);
+        new UserBaseIO().editUserFolder(oldName, newName);
     }
 
-    public void editCalendarFile(String name, String oldFileName, String newFileName) {
+    public void editCalendaName(String name, String oldFileName, String newFileName) {
         userBase.get(name).remove(oldFileName);
         userBase.get(name).add(newFileName);
         new UserBaseIO().editCalendarFile(name, oldFileName, newFileName);

@@ -1,4 +1,4 @@
-package Model.Task;
+package model.task;
 
 public class Task {
     private String name;

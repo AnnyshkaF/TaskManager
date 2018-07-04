@@ -1,39 +1,31 @@
-package Tests;
+package tests;
 
-import IO.TaskIO;
-import Model.Calendar.Date;
-import Model.Task.Task;
-import Model.Task.TaskMap;
+import io.TaskIO;
+import junit.framework.TestCase;
+import model.calendar.Date;
+import model.task.Task;
+import model.task.TaskMap;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-public class TaskIOTest {
-    @Before
-    public void before(){
-        System.out.println("Test started");
-    }
-    @After
-    public void after(){
-        System.out.println("Test finished");
-    }
-
+public class TaskIOTest extends TestCase{
     @Test
-    public void loadTasksFromFile() {
+    public void testLoadTasksFromFile(){
         TaskMap taskMap = new TaskMap();
         TaskIO taskIO = new TaskIO();
         try {
-            taskIO.loadTasksFromFile("C:/Users/Anna/Desktop/LoginWindow/readTest.xml", taskMap);/*readTest45.xml*/
+            taskIO.loadTasksFromFile("C:/Users/Anna/Desktop/test/readTest.xml", taskMap);/*readTest45.xml*/
         } catch (Exception e) {
-            assertEquals(e.getMessage(), "ErrorTaskLoading");
-            fail("ErrorTaskLoading");
+            e.printStackTrace();
+            fail("Loading error");
         }
     }
 
     @Test
-    public void saveTasksToFile() {
+    public void testSaveTasksToFile(){
         TaskMap taskMap1 = new TaskMap();
         TaskIO taskIO = new TaskIO();
         for (int i = 1; i < 11; i++) {
@@ -43,12 +35,11 @@ public class TaskIOTest {
                     new Task(str, str, str, str, true));
         }
         try {
-            synchronized (taskIO) {
-                taskIO.saveTasksToFile("C:/Users/Anna/Desktop/LoginWindow/LoginWindow.xml", taskMap1);
-            }
+            taskIO.saveTasksToFile("C:/Users/Anna/Desktop/test/1.xml", taskMap1);
         } catch (Exception e) {
-            assertEquals(e.getMessage(), "ErrorTaskSaving");
-            fail("ErrorTaskSaving");
+            e.printStackTrace();
+            fail("Saving error");
         }
+
     }
 }

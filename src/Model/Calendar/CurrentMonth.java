@@ -1,10 +1,9 @@
-package Model.Calendar;
+package model.calendar;
 
 public class CurrentMonth {
     private Date currentMonth = new Date(java.time.MonthDay.now().getDayOfMonth(), java.time.MonthDay.now().getMonth().getValue(), java.time.Year.now().getValue());
 
-    public CurrentMonth() {
-    }
+    public CurrentMonth() { }
 
     public CurrentMonth(Date date) {
         currentMonth = date;

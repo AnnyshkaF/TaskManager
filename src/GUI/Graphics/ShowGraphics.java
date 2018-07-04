@@ -1,10 +1,10 @@
-package GUI.Graphics;
+package gui.graphics;
 
-import GUI.ChooseTime;
-import Model.Calendar.Calendar;
-import Model.Calendar.CurrentMonth;
-import Model.Calendar.Date;
-import Model.Task.TaskMap;
+import gui.ChooseTime;
+import model.calendar.Calendar;
+import model.calendar.CurrentMonth;
+import model.calendar.Date;
+import model.task.TaskMap;
 import javafx.util.Pair;
 
 import javax.swing.*;
@@ -12,7 +12,7 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
-class ViewGraphics extends Component {
+class ViewGraphics extends JComponent{
     private String[] monthNames = {"January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"};
     private Calendar calendar;
@@ -22,6 +22,8 @@ class ViewGraphics extends Component {
     private ArrayList<Date> dateList;
     private int amountOfYears;
     private int otstup = 0;
+    JPanel panel = new JPanel(new GridBagLayout());
+
     public ViewGraphics(Calendar calendar, TaskMap taskMap, Date date, ChooseTime time){
         this.calendar = calendar;
         this.taskMap = taskMap;
@@ -154,12 +156,12 @@ class ViewGraphics extends Component {
     }
     void drawAllWeeksAxis(Graphics g){
         g.setColor(Color.BLACK);
-        g.drawLine(20  ,10 ,20 ,440 );         //ось yWeek
-        g.drawLine(20 , 430 , 500 * amountOfYears , 430);      //ось xWeek
-        g.drawLine(20 ,10 ,15 ,25);            //стрелка   yWeek
-        g.drawLine(20 ,10 ,25 ,25);            //стрелка   yWeek
-        g.drawLine(500 * amountOfYears ,430 ,495 * amountOfYears ,425);        //стрелка   xWeek
-        g.drawLine(500 * amountOfYears ,430 ,495 * amountOfYears ,435);        //стрелка   xWeek
+        g.drawLine(20  ,10 ,20 ,440 );                                          //ось yWeek
+        g.drawLine(20 , 430 , 500 * amountOfYears , 430);                       //ось xWeek
+        g.drawLine(20 ,10 ,15 ,25);                                             //стрелка   yWeek
+        g.drawLine(20 ,10 ,25 ,25);                                             //стрелка   yWeek
+        g.drawLine(500 * amountOfYears ,430 ,495 * amountOfYears ,425);         //стрелка   xWeek
+        g.drawLine(500 * amountOfYears ,430 ,495 * amountOfYears ,435);         //стрелка   xWeek
         g.drawString("weeks", 485 * amountOfYears, 420);
         g.drawString("tasks", 30, 25);
 
@@ -247,22 +249,21 @@ class ViewGraphics extends Component {
             g.setColor(Color.GREEN);
             recalculateWeekAndDraw(g, i, done[i], i+1, done[i+1]);
         }
-        int totalUndone = 0, totalDone  = 0, res;
+        int totalUndone = 0, totalDone  = 0, total = 0;
         for (int i = 0; i < undone.length; i++) {
             totalUndone += undone[i];
             totalDone += done[i];
         }
-        res = totalUndone - totalDone;
-        if(res < 0) res = 0;
         g.setColor(Color.BLACK);
+        total = totalUndone + totalDone;
         g.drawString(date.getMonth() + "/" + date.getYear(), 630, 20);
-        g.drawString("Undone: " + totalUndone, 630, 40);
+        g.drawString("Added: " + total, 630, 40);
         g.drawString("Done: " + totalDone, 630, 60);
-        g.drawString("Left: " + res, 630, 80);
+        g.drawString("Left: " + totalUndone, 630, 80);
     }
     void calcMonthValues(Graphics g, Date fDate) {    //month
         int lastday = calendar.getLoadedMonth(fDate.getMonth(), fDate.getYear()).getAmountOfDaysInMonth();
-        int totalUndone = 0, totalDone  = 0, res = 0;
+        int totalUndone = 0, totalDone  = 0, total = 0;
         boolean once = false;
         for (int i = 1; i < lastday; i++) {
 
@@ -279,23 +280,24 @@ class ViewGraphics extends Component {
 
             totalUndone += undone1;
             totalDone += done1;
+            total = totalUndone + totalDone;
             if(i == lastday  - 1){
                 totalUndone += undone2;
                 totalDone += done2;
             }
         }
-        res = totalUndone - totalDone;
-        if(res < 0) res = 0;
         g.setColor(Color.BLACK);
+
         g.drawString(date.getMonth() + "/" + date.getYear(), 680, 20);
-        g.drawString("Undone: " + totalUndone, 680, 40);
+        g.drawString("Added: " + total, 680, 40);
         g.drawString("Done: " + totalDone, 680, 60);
-        g.drawString("Left: " + res, 680, 80);
+        g.drawString("Left: " + totalUndone, 680, 80);
     }
     void calcAllWeeksValues(Graphics g) {    //week
         ArrayList<Pair<Integer, Integer>> list = new ArrayList<Pair<Integer, Integer>>();
         ArrayList<Date> dateList = new ArrayList<Date>();
 
+        int totalUndone = 0, totalDone = 0, res = 0;
         int curMonth = 12;
         int curYear = 2017;
         int j = 0;
@@ -317,8 +319,9 @@ class ViewGraphics extends Component {
                 dateList.add(new Date(counterOnceDay, curMonth, curYear));
                 counterOnceDay+=7;
                 i++;
+                totalUndone+=undone;
+                totalDone+=done;
             }
-
             curMonth++;
             if (curMonth == 13) {
                 curMonth = 1;
@@ -333,12 +336,19 @@ class ViewGraphics extends Component {
             g.setColor(Color.GREEN);
             recalculateAllWeeksAndDraw(g, i, list.get(i).getValue(), i+1, list.get(i + 1).getValue());
         }
+        int total = totalUndone + totalDone;
+        JLabel undone = new JLabel("Added: " + total  + " ");
+        JLabel done = new JLabel("Done: " + totalDone + " ");
+        JLabel left = new JLabel("Left: " + totalUndone + " ");
+        panel.add(undone);
+        panel.add(done);
+        panel.add(left);
     }
     void calcYearWeeksValues(Graphics g, int year) {    //week
         ArrayList<Pair<Integer, Integer>> list = new ArrayList<>();
-        int totalUndone = 0, totalDone  = 0, res = 0;
+        int totalUndone = 0, totalDone  = 0, total = 0;
         ArrayList<Date> dateList = new ArrayList<Date>();
-
+        int done = 0, undone = 0;
         int curMonth = 12;
         int curYear = 2017;
         int j = 0;
@@ -352,20 +362,18 @@ class ViewGraphics extends Component {
                     day = 0;
                 }
             }
-            int i = 0, done = 0, undone = 0;
+
             while (counterOnceDay < calendar.getLoadedMonth(curMonth, curYear).getAmountOfDaysInMonth()) {
                 undone = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), false, counterOnceDay).getTotal();
                 done = taskMap.calculateTotalTasksPerWeek(calendar, new Date(1, curMonth, curYear), true, counterOnceDay).getTotal();
                 list.add(new Pair<>(undone, done));
                 dateList.add(new Date(counterOnceDay, curMonth, curYear));
                 counterOnceDay += 7;
-                i++;
                 if(curYear == year){
                     totalUndone += undone;
                     totalDone += done;
                 }
             }
-
             curMonth++;
             if (curMonth == 13) {
                 curMonth = 1;
@@ -395,13 +403,12 @@ class ViewGraphics extends Component {
                 break;
             }
         }
-        res = totalUndone - totalDone;
-        if(res < 0) res = 0;
+        total = totalUndone + totalDone;
         g.setColor(Color.BLACK);
         g.drawString(String.valueOf(date.getYear()), 700, 20);
-        g.drawString("Undone: " + totalUndone, 700, 40);
+        g.drawString("Undone: " + total, 700, 40);
         g.drawString("Done: " + totalDone, 700, 60);
-        g.drawString("Left: " + res, 700, 80);
+        g.drawString("Left: " + totalUndone, 700, 80);
     }
 
     void recalculateWeekAndDraw(Graphics g, int d1, int t1, int d2, int t2){
@@ -472,7 +479,8 @@ public class ShowGraphics {
 
         switch(time) {
             case  WEEKS:
-                dialog.setMinimumSize(new Dimension(830, 560));
+                dialog.add(viewGraphics.panel, new BorderLayout().BEFORE_FIRST_LINE);
+                dialog.setMinimumSize(new Dimension(830, 580));
                 dialog.setTitle( "Statistics: All years");
                 break;
             case  MONTH:

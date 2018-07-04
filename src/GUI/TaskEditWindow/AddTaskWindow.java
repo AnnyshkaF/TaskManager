@@ -1,9 +1,9 @@
-package GUI.TaskEditWindow;
+package gui.taskeditwindow;
 
-import GUI.Calendar.CalendarWindowListener;
-import Model.Calendar.Date;
-import Model.Task.Task;
-import Model.Task.TaskMap;
+import gui.calendar.CalendarWindowListener;
+import model.calendar.Date;
+import model.task.Task;
+import model.task.TaskMap;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 public class AddTaskWindow {
-    public AddTaskWindow(Date date, TaskMap taskMap, DefaultListModel<String> dlm, ArrayList<Task> currentTaskList, CalendarWindowListener calendarWindowListener) {
+    public AddTaskWindow(Date date, TaskMap taskMap, DefaultListModel<String> dlm, ArrayList<Task> currentTaskList, CalendarWindowListener calendarWindowListener, ListTaskListener listTaskListener) {
         JFrame frame = new JFrame();
         JLabel nameLable = new JLabel("Name:");
         JLabel descriptionLable = new JLabel("Description:");
@@ -51,10 +51,9 @@ public class AddTaskWindow {
                 }
                 Task tmpTask = new Task(nameText.getText(), descriptionText.getText(), durabilityText.getText(), complexityText.getText(), false);
                 taskMap.addTask(date, tmpTask);
-                currentTaskList.add(tmpTask);
 
-                dlm.addElement(tmpTask.getName() + " | " + tmpTask.getComplexity());
                 calendarWindowListener.deleteAndUpdate();
+                listTaskListener.updateList();
                 frame.dispose();
             }
         });

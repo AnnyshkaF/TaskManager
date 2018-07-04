@@ -1,12 +1,9 @@
-package GUI.TaskEditWindow;
+package gui.taskeditwindow;
 
-import Model.Calendar.Date;
-import Model.Task.Task;
-import Model.Task.TaskMap;
-import javafx.application.Application;
+import model.calendar.Date;
+import model.task.Task;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

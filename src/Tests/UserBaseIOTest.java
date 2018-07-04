@@ -1,7 +1,8 @@
-package Tests;
+package tests;
 
-import IO.UserBaseIO;
-import Model.UserBase;
+import io.UserBaseIO;
+import junit.framework.TestCase;
+import model.userbase.UserBase;
 import org.junit.Test;
 
 import java.io.File;
@@ -12,23 +13,23 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
-public class UserBaseIOTest {
+public class UserBaseIOTest extends TestCase {
 
     @Test
-    public void loadUsersFiles() {
+    public void testLoadUsersFiles() {
         UserBase userBase = new UserBase();
         new UserBaseIO().loadUsersFiles(userBase);
         assertEquals(4, userBase.getUsersNames().length);
     }
 
     @Test
-    public void getFilePath() {
+    public void testGetFilePath() {
         File folder = new File("tst/");
         assertEquals("tst", folder.getPath());
     }
 
     @Test
-    public void createNameFolder() {
+    public void testCreateNameFolder() {
         String foldername = "nameCreate";
         File folder = new File("tst/" + foldername);
         folder.mkdir();
@@ -36,7 +37,7 @@ public class UserBaseIOTest {
     }
 
     @Test
-    public void deleteNameFolder() {
+    public void testDeleteNameFolder() {
         String foldername = "nameDelete";
         File folder = new File("tst/" + foldername);
         folder.mkdir();
@@ -45,7 +46,7 @@ public class UserBaseIOTest {
     }
 
     @Test
-    public void createCalendarFile() {
+    public void testCreateCalendarFile() {
         String filename = "1.xml";
         File folder = new File("tst/" + filename);
         try {
@@ -57,7 +58,7 @@ public class UserBaseIOTest {
     }
 
     @Test
-    public void deleteCalendarFile() {
+    public void testDeleteCalendarFile() {
         String filename = "2.xml";
         File folder = new File("tst/" + filename);
         try {
@@ -69,8 +70,9 @@ public class UserBaseIOTest {
         assertFalse(new File("tst/" + filename).exists());
     }
 
+    //renaming after end of the program
     @Test
-    public void editNameFolder() {
+    public void testEditNameFolder() {
         String oldFolder = "oldFolder";
         String newFolder = "newFolder";
         File folder = new File("tst/" + oldFolder);
@@ -80,7 +82,7 @@ public class UserBaseIOTest {
     }
 
     @Test
-    public void editCalendarFile() {
+    public void testEditCalendarFile() {
         String oldFile = "oldFile.xml";
         String newFile = "newFile.xml";
         File folder = new File("tst/" + oldFile);

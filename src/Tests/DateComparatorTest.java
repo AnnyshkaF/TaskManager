@@ -1,21 +1,15 @@
-package Tests;
+package tests;
 
-import Model.Calendar.Date;
-import Model.Task.DateComparator;
-import org.junit.jupiter.api.Test;
+import junit.framework.TestCase;
+import model.calendar.Date;
+import model.task.DateComparator;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class DateComparatorTest {
+public class DateComparatorTest extends TestCase {
 
     @Test
-    void comparePositive() {
+    public void testCompare() {
         DateComparator d = new DateComparator();
         assertEquals(1, d.compare(new Date(3, 1, 2018), new Date(1, 1, 2018)));
-    }
-    @Test
-    void compareNegative() {
-        DateComparator d = new DateComparator();
-        assertEquals(0, d.compare(new Date(3, 1, 2018), new Date(1, 1, 2019)));
     }
 }

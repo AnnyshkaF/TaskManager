@@ -1,9 +1,9 @@
-package GUI.StatisticWindow;
+package gui.statisticwindow;
 
-import Model.Calendar.Calendar;
-import Model.Calendar.CurrentMonth;
-import Model.Calendar.Date;
-import Model.Task.TaskMap;
+import model.calendar.Calendar;
+import model.calendar.CurrentMonth;
+import model.calendar.Date;
+import model.task.TaskMap;
 
 import javax.swing.*;
 import java.awt.*;

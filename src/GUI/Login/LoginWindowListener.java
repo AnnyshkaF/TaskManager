@@ -1,6 +1,6 @@
-package GUI.Login;
+package gui.login;
 
-import Model.UserBase;
+import model.userbase.UserBase;
 
 public class LoginWindowListener {
     private LoginWindow loginWindow;

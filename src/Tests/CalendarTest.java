@@ -1,21 +1,18 @@
-package Tests;
+package tests;
 
-import IO.CalendarIO;
-import Model.Calendar.Calendar;
+import io.CalendarIO;
+import junit.framework.TestCase;
+import model.calendar.Calendar;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assertions.*;
-
-public class CalendarTest {
-
+public class CalendarTest extends TestCase {
     @Test
-    public void getLoadedMonthArraySize() {
+    public void testGetLoadedMonthArraySize() {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/LoginWindow/months.xml", calendar);
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/months.xml", calendar);
         } catch (Exception e) {
             fail("ErrorTaskLoading");
         }
@@ -23,11 +20,11 @@ public class CalendarTest {
     }
 
     @Test
-    public void getLoadedMonth() {
+    public void testGetLoadedMonth() {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/LoginWindow/monthsNull.xml", calendar);
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/monthsNull.xml", calendar);
             assertNull(calendar.getLoadedMonth(12, 2018));
         } catch (Exception e) {
             assertEquals(e.getMessage(), "ErrorTaskLoading");
@@ -35,11 +32,11 @@ public class CalendarTest {
         }
     }
     @Test
-    public void getYears() {
+    public void testGetYears() {
         Calendar calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
         try {
-            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/LoginWindow/months.xml", calendar);
+            calendarIO.loadCalendarFromFile("C:/Users/Anna/Desktop/test/months.xml", calendar);
         } catch (Exception e) {
             fail("ErrorTaskLoading");
         }

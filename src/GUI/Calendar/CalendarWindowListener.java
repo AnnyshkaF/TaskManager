@@ -1,7 +1,7 @@
-package GUI.Calendar;
+package gui.calendar;
 
 
-import Model.Calendar.Calendar;
+import model.calendar.Calendar;
 
 public class CalendarWindowListener {
     private CalendarWindow calendarWindow;

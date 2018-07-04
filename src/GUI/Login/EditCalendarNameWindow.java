@@ -1,7 +1,7 @@
-package GUI.Login;
+package gui.login;
 
-import IO.UserBaseIO;
-import Model.UserBase;
+import io.UserBaseIO;
+import model.userbase.UserBase;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +15,7 @@ public class EditCalendarNameWindow {
         dialog.setSize(250, 150);
         dialog.setResizable(false);
         dialog.setTitle("Editing calendar name");
-        JLabel labelUsername = new JLabel("Calendar: ");
+        JLabel labelUsername = new JLabel("calendar: ");
         JTextField textUsername = new JTextField(oldFileName);
         JButton buttonOK = new JButton("OK");
         JButton buttonCancel = new JButton("Cancel");
@@ -41,7 +41,7 @@ public class EditCalendarNameWindow {
                     JOptionPane.showMessageDialog(null, "Enter name!");
                     return;
                 }
-                userBase.editCalendarFile(name, oldFileName, newFileName);
+                userBase.editCalendaName(name, oldFileName, newFileName);
                 new UserBaseIO().editCalendarFile(name, oldFileName, newFileName);
                 loginWindowListener.updateFiles();
                 dialog.dispose();

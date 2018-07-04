@@ -1,8 +1,8 @@
-package IO;
+package io;
 
-import Model.Calendar.Date;
-import Model.Task.Task;
-import Model.Task.TaskMap;
+import model.calendar.Date;
+import model.task.Task;
+import model.task.TaskMap;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -19,37 +19,33 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class TaskIO {
-    public void loadTasksFromFile(String filename, TaskMap taskMap){
-            try{
-                File fXmlFile = new File(filename);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fXmlFile);
+    public void loadTasksFromFile(String filename, TaskMap taskMap) throws Exception {
 
-            doc.getDocumentElement().normalize();
-            NodeList nList = doc.getElementsByTagName("task");
-            for (int temp = 0; temp < nList.getLength(); temp++) {
-                Node nNode = nList.item(temp);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-                    Date tmpDate = new Date(Integer.parseInt(eElement.getElementsByTagName("day").item(0).getTextContent()),
-                            Integer.parseInt(eElement.getElementsByTagName("month").item(0).getTextContent()),
-                            Integer.parseInt(eElement.getElementsByTagName("year").item(0).getTextContent()));
-                    Task tmpTask = new Task(eElement.getElementsByTagName("name").item(0).getTextContent(),
-                            eElement.getElementsByTagName("description").item(0).getTextContent(),
-                            eElement.getElementsByTagName("durability").item(0).getTextContent(),
-                            eElement.getElementsByTagName("complexity").item(0).getTextContent(),
-                            Boolean.valueOf(eElement.getElementsByTagName("condition").item(0).getTextContent()));
-                    taskMap.addTask(tmpDate, tmpTask);
-                }
+        File fXmlFile = new File(filename);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(fXmlFile);
+
+        doc.getDocumentElement().normalize();
+        NodeList nList = doc.getElementsByTagName("task");
+        for (int temp = 0; temp < nList.getLength(); temp++) {
+            Node nNode = nList.item(temp);
+            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) nNode;
+                Date tmpDate = new Date(Integer.parseInt(eElement.getElementsByTagName("day").item(0).getTextContent()),
+                        Integer.parseInt(eElement.getElementsByTagName("month").item(0).getTextContent()),
+                        Integer.parseInt(eElement.getElementsByTagName("year").item(0).getTextContent()));
+                Task tmpTask = new Task(eElement.getElementsByTagName("name").item(0).getTextContent(),
+                        eElement.getElementsByTagName("description").item(0).getTextContent(),
+                        eElement.getElementsByTagName("durability").item(0).getTextContent(),
+                        eElement.getElementsByTagName("complexity").item(0).getTextContent(),
+                        Boolean.valueOf(eElement.getElementsByTagName("condition").item(0).getTextContent()));
+                taskMap.addTask(tmpDate, tmpTask);
             }
-            }catch (Exception e){
-                throw new RuntimeException("ErrorTaskLoading");
-            }
+        }
     }
 
-    public void saveTasksToFile(String filename, TaskMap taskMap){
-        try {
+    public void saveTasksToFile(String filename, TaskMap taskMap) throws Exception {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
@@ -101,8 +97,5 @@ public class TaskIO {
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File(filename));
             transformer.transform(source,result);
-        } catch (Exception e) {
-            throw new RuntimeException("ErrorTaskSaving");
-        }
     }
 }

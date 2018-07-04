@@ -1,13 +1,11 @@
-package IO;
+package io;
 
-import Model.UserBase;
+import model.userbase.UserBase;
 import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
 
 public class UserBaseIO {
     final String saveFolder = "saves/";
-
 
     public void loadUsersFiles(UserBase usersBase) {
         File folder = new File(saveFolder);
@@ -27,7 +25,7 @@ public class UserBaseIO {
             return saveFolder + name + "/" + filename;
     }
 
-    public void createNameFolder(String name) {
+    public void createUserFolder(String name) {
         File folder = new File(saveFolder + name);
         if (!folder.exists()) {
             folder.mkdir();
@@ -36,7 +34,7 @@ public class UserBaseIO {
         }
     }
 
-    public void deleteNameFolder(String name) {
+    public void deleteUserFolder(String name) {
         File folder = new File(saveFolder + name);
         if (folder.exists()) {
             File[] files = folder.listFiles();
@@ -47,14 +45,14 @@ public class UserBaseIO {
         folder.delete();
     }
 
+    public void editUserFolder(String oldName, String newName){
+        File folder = new File(saveFolder + oldName);
+        folder.renameTo(new File(saveFolder + newName));
+    }
+
     public void deleteCalendarFile(String name, String filename){
         File folder = new File(saveFolder + name + "/" + filename);
         folder.delete();
-    }
-
-    public void editNameFolder(String oldName, String newName){
-        File folder = new File(saveFolder + oldName);
-        folder.renameTo(new File(saveFolder + newName));
     }
 
     public void editCalendarFile(String name, String oldFileName, String newFileName){

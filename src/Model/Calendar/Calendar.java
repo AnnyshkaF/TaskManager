@@ -1,4 +1,4 @@
-package Model.Calendar;
+package model.calendar;
 
 import java.util.ArrayList;
 import java.util.Vector;

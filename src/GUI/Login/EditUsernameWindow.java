@@ -1,7 +1,7 @@
-package GUI.Login;
+package gui.login;
 
-import IO.UserBaseIO;
-import Model.UserBase;
+import io.UserBaseIO;
+import model.userbase.UserBase;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -41,8 +41,8 @@ public class EditUsernameWindow {
                     JOptionPane.showMessageDialog(null, "Enter name!");
                     return;
                 }
-                userBase.editNameFolder(oldName, newName );
-                new UserBaseIO().editNameFolder(oldName, newName);
+                userBase.editUserName(oldName, newName );
+                new UserBaseIO().editUserFolder(oldName, newName);
                 loginWindowListener.updateNames();
                 dialog.dispose();
             }

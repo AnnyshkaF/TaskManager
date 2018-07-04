@@ -1,7 +1,7 @@
-package GUI.Login;
+package gui.login;
 
-import IO.UserBaseIO;
-import Model.UserBase;
+import io.UserBaseIO;
+import model.userbase.UserBase;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -38,7 +38,7 @@ public class AddUserWindow extends JDialog{
                     return;
                 }
                 userBase.addUser(textFieldName.getText());
-                new UserBaseIO().createNameFolder(name);
+                new UserBaseIO().createUserFolder(name);
                 dispose();
                 loginWindowListener.updateNames();
             }

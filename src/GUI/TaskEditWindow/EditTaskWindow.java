@@ -1,8 +1,8 @@
-package GUI.TaskEditWindow;
+package gui.taskeditwindow;
 
-import Model.Calendar.Date;
-import Model.Task.Task;
-import Model.Task.TaskMap;
+import model.calendar.Date;
+import model.task.Task;
+import model.task.TaskMap;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,7 +51,7 @@ public class EditTaskWindow{
                 taskMap.getTaskArray(date).remove(index);
                 taskMap.addTask(date, newTask);
 
-                JOptionPane.showMessageDialog(null, "Task is changed!");
+                JOptionPane.showMessageDialog(null, "task is changed!");
                 frame.dispose();
             }
         });

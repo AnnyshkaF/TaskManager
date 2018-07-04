@@ -1,19 +1,20 @@
-package Tests;
+package tests;
 
-import IO.CalendarIO;
-import Model.Calendar.Calendar;
-import Model.Calendar.Date;
-import Model.Task.Task;
-import Model.Task.TaskMap;
+import io.CalendarIO;
+import junit.framework.TestCase;
+import model.calendar.Calendar;
+import model.calendar.Date;
+import model.task.Task;
+import model.task.TaskMap;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class TaskMapTest {
+public class TaskMapTest extends TestCase {
 
     @Test
-    public void addTask() {
+    public void testAddTask() {
         TaskMap taskMap = new TaskMap();
         for (int i = 1; i < 11; i++) {
             String s = String.valueOf(i);
@@ -26,7 +27,7 @@ public class TaskMapTest {
     }
 
     @Test
-    public void deleteTask() {
+    public void testDeleteTask() {
         TaskMap taskMap = new TaskMap();
         for (int i = 1; i < 11; i++) {
             String s = String.valueOf(i);
@@ -43,7 +44,7 @@ public class TaskMapTest {
     }
 
     @Test
-    public void calculateTotalTasksPerDay() {
+    public void testCalculateTotalTasksPerDay() {
         TaskMap taskMap = new TaskMap();
         for (int i = 1; i < 11; i++) {
             String s = String.valueOf(i);
@@ -54,7 +55,7 @@ public class TaskMapTest {
     }
 
     @Test
-    public void calculateTotalTasksPerWeek() {
+    public void testCalculateTotalTasksPerWeek() throws Exception{
         Calendar cal = new Calendar();
         new CalendarIO().loadCalendarFromFile("C:/Users/Anna/Desktop/months.xml", cal);
         TaskMap taskMap = new TaskMap();
@@ -68,7 +69,7 @@ public class TaskMapTest {
     }
 
     @Test
-    public void calculateTotalTasksPerMonth() {
+    public void testCalculateTotalTasksPerMonth() {
         TaskMap taskMap = new TaskMap();
         for (int i = 1; i < 11; i++) {
             String s = String.valueOf(i);

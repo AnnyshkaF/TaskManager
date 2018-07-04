@@ -1,4 +1,4 @@
-package Model.Task;
+package model.task;
 
 public class WeekStat{
     private int total = 0;

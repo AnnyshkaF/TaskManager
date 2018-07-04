@@ -1,49 +1,49 @@
-package Tests;
+package tests;
 
-import Model.UserBase;
-import org.junit.jupiter.api.Test;
+import junit.framework.TestCase;
+import model.userbase.UserBase;
+import org.junit.Assert;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class UserBaseTest {
-
+public class UserBaseTest extends TestCase {
     @Test
-    void addUser() {
+    public void testAddUser() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
         userBase.addUser("Hanna");
-        assertEquals(2, userBase.getUsersNames().length);
+        Assert.assertEquals(2, userBase.getUsersNames().length);
     }
 
     @Test
-    void addCalendar() {
+    public void testAddCalendar() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
         userBase.addCalendar("Anna", "cal1");
         userBase.addCalendar("Anna", "cal2");
-        assertEquals(2, userBase.getUsersFiles("Anna").length);
+        Assert.assertEquals(2, userBase.getUsersCalendars("Anna").length);
     }
 
     @Test
-    void deleteUser() {
+    public void testDeleteUser() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
         userBase.addUser("Hanna");
         userBase.deleteUser("Hanna");
-        assertEquals(1, userBase.getUsersNames().length);
+        Assert.assertEquals(1, userBase.getUsersNames().length);
     }
 
     @Test
-    void deleteCalendar() {
+    public void testDeleteCalendar() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
         userBase.addCalendar("Anna", "cal1");
         userBase.deleteCalendar("Anna", "cal2");
-        assertEquals(1, userBase.getUsersFiles("Anna").length);
+        Assert.assertEquals(1, userBase.getUsersCalendars("Anna").length);
     }
 
     @Test
-    void getUsersNames() {
+    public void testGetUsersNames() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
         userBase.addUser("Hanna");
@@ -52,36 +52,36 @@ class UserBaseTest {
     }
 
     @Test
-    void getUsersFiles() {
+    public void testGetUsersFiles() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
         userBase.addCalendar("Anna", "cal1");
         userBase.addCalendar("Anna", "cal2");
         String[] files = {"cal1", "cal2"};
-        assertArrayEquals(files, userBase.getUsersFiles("Anna"));
+        assertArrayEquals(files, userBase.getUsersCalendars("Anna"));
     }
 
     @Test
-    void getUserBase() {
+    public void testGetUserBase() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
-        assertNotNull(userBase.getUserBase());
+        Assert.assertNotNull(userBase.getUserBase());
     }
 
     @Test
-    void editNameFolder() {
+    public void testEditNameFolder() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
-        userBase.editNameFolder("Anna", "Hanna");
-        assertEquals("Hanna", userBase.getUsersNames()[0]);
+        userBase.editUserName("Anna", "Hanna");
+        Assert.assertEquals("Hanna", userBase.getUsersNames()[0]);
     }
 
     @Test
-    void editCalendarFile() {
+    public void testEditCalendarFile() {
         UserBase userBase = new UserBase();
         userBase.addUser("Anna");
         userBase.addCalendar("Anna", "cal1");
-        userBase.editCalendarFile("Anna", "cal1", "cal2");
-        assertEquals("cal2", userBase.getUsersFiles("Anna")[0]);
+        userBase.editCalendaName("Anna", "cal1", "cal2");
+        Assert.assertEquals("cal2", userBase.getUsersCalendars("Anna")[0]);
     }
 }

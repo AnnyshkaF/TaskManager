@@ -1,4 +1,4 @@
-package Model.Calendar;
+package model.calendar;
 
 public class LoadedMonth {
     private int month;

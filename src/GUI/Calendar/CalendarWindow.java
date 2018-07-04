@@ -1,11 +1,11 @@
-package GUI.Calendar;
-import GUI.Graphics.ShowGraphics;
-import GUI.TaskEditWindow.ListTaskWindow;
-import GUI.ChooseTime;
-import IO.CalendarIO;
-import IO.TaskIO;
-import Model.Calendar.*;
-import Model.Task.TaskMap;
+package gui.calendar;
+import gui.graphics.ShowGraphics;
+import gui.taskeditwindow.ListTaskWindow;
+import gui.ChooseTime;
+import io.CalendarIO;
+import io.TaskIO;
+import model.calendar.*;
+import model.task.TaskMap;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -47,7 +47,11 @@ public class CalendarWindow {
     public CalendarWindow(TaskMap taskMap, String calendarFile, String saveFile) {
         this.calendar = new Calendar();
         CalendarIO calendarIO = new CalendarIO();
-        calendarIO.loadCalendarFromFile(calendarFile, calendar);
+        try {
+            calendarIO.loadCalendarFromFile(calendarFile, calendar);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.taskMap = taskMap;
         CalendarWindowListener calendarWindowListener = new CalendarWindowListener(this, calendar);
         JScrollPane scrollPane = new JScrollPane(table);
@@ -123,7 +127,7 @@ public class CalendarWindow {
                         return;
                     }
                     ListTaskWindow taskListWindow = new ListTaskWindow(taskMap,
-                            new Model.Calendar.Date(getDate(table.getValueAt(table.getSelectedRow(), table.getSelectedColumn()).toString()),
+                            new model.calendar.Date(getDate(table.getValueAt(table.getSelectedRow(), table.getSelectedColumn()).toString()),
                                     currentMonth.getMonth(), currentMonth.getYear()), calendarWindowListener);
                 }
             }
@@ -226,7 +230,7 @@ public class CalendarWindow {
                 firstDay = 0;
             }
             for (int j = firstDay; j < 7; j++) {
-                int tasksNum = taskMap.calculateTotalTasksPerDay(new Model.Calendar.Date(day, tmpMonth.getMonth(), tmpMonth.getYear()), false);
+                int tasksNum = taskMap.calculateTotalTasksPerDay(new model.calendar.Date(day, tmpMonth.getMonth(), tmpMonth.getYear()), false);
                 if (tasksNum > 0)
                     table.setValueAt(Integer.toString(day++) + taskStars(tasksNum), i, j);
                 else {
